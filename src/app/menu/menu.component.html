@@ -1,0 +1,35 @@
+<p>
+  Menu Component Works!
+</p>
+
+<div class="col-md-12">
+   <ul class="nav">
+       <!-- Home Button is Automatically selected for Base path (/)  --> 
+     <li><a routerLink="/" routerLinkActive="active" ><i class="fa fa-angle-right"></i>Home selected(/)</a></li>  |
+
+
+     <!-- Home Button is Automatically Not Selected for Base path (/)  --> 
+     <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-angle-right"></i>Home not selected(/)</a></li>|
+
+     <li><a routerLink="/user" routerLinkActive="active" ><i class="fa fa-angle-right"></i>User not selected</a></li>|
+     <li><a routerLink="/admin/{{id}}" routerLinkActive="active" >Admin</a></li>|
+     
+
+       <!-- user  Also selected automatically  --> 
+     <li><a routerLink="/user" class="active-class" routerLinkActive="active" ><i class="fa fa-angle-right"></i>Userselected (/user)</a></li>|
+
+     <li *ngIf="login;else logout"><a routerLink="/logout" routerLinkActive="active" >Logout</a></li>|
+     <ng-template #logout>
+      <li><a routerLink="/login"  routerLinkActive="active" ><i class="fa fa-angle-right"></i>Login</a></li>|
+      <li><a routerLink="/register"  routerLinkActive="active" ><i class="fa fa-angle-right"></i>Register</a></li>
+      </ng-template>
+
+      <li><a routerLink="/search"  routerLinkActive="active" ><i class="fa fa-angle-right"></i>Search</a></li>
+     
+    </ul>
+
+</div>
+
+
+
+

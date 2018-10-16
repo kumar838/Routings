@@ -1,0 +1,18 @@
+<p>
+  artist-track-list works!
+</p>
+
+
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<ul class="list-group">
+<li class="list-group-item"
+    *ngFor="let track of tracks">
+  <img src="{{track.artworkUrl30}}">
+  <a target="_blank"
+     href="{{track.trackViewUrl}}">{{ track.trackName }}
+  </a>
+</li>
+</ul>

@@ -1,0 +1,40 @@
+<p>
+  search works!
+</p>
+
+<div class="col-lg-6 offset-lg-3" style="margin-top:50px">
+  <div class="input-group mb-3">
+    
+    <input type="text" class="form-control" placeholder="eg.John Legend" #search>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" (click) = "onSearch(search.value)">Search</button>
+    </div>
+    
+  </div>
+ 
+  <div class="text-center">
+    <p class="lead" *ngIf="loading">Loading...</p>
+  </div>
+
+
+  <div class="list-group">
+    <a [routerLink]="['/artist',track.artistId]"
+      class="list-group-item list-group-item-action"
+      *ngFor="let track of itunes.results">
+      <img src="{{track.thumbnail}}">
+      {{ track.name }} <span class="text-muted">by</span> {{ track.artist }}
+    </a>
+  </div> 
+</div>
+
+<!-- Results -->
+<!-- <div class="col-lg-3" *ngFor="let track of itunes.results">
+<div class="card" >
+  <img class="card-img-top" src="{{track.thumbnail}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ track.name }}</h5>
+    <p class="card-text">{{ track.artist }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div> -->

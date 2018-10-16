@@ -1,0 +1,20 @@
+<p>
+  artist works!
+</p>
+
+
+<div class="jumbotron">
+  <h1 class="display-4">{{artist?.artistName}}</h1>
+  <h5 class="lead">{{artist?.primaryGenreName}} </h5>
+ 
+</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['./tracks']">Tracks</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['./albums']">Albums</a>
+  </li>
+ 
+</ul>
+<router-outlet></router-outlet>

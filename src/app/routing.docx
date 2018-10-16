@@ -1,0 +1,64 @@
+Angular Router introduces the following terms and concepts:
+
+1.router service:
+ the global Angular Router service in our application
+2.router configuration: 
+definition of all possible router states our application can be in
+3.router state: 
+the state of the router at some point in time, expressed as a tree of activated route snapshots
+4.activated route snapshot: 
+provides access to the URL, parameters, and data for a router state node
+5.guard: 
+script that runs when a route is loaded, activated or deactivated
+6.resolver: 
+script that fetches data before the requested page is activated
+7.router outlet:
+ location in the DOM where Angular Router can place activated components.
+
+
+where each route can have the following properties:
+
+1.path: string, path to match the URL
+2.patchMatch: string, how to match the URL
+3.component: class reference, component to activate when this route is activated
+4.redirectTo: string, URL to redirect to when this route is activated
+5.data: static data to assign to route
+6.resolve: dynamic data to resolve and merge with data when resolved
+7.children: child routes.
+
+There are two ways to create a routing module:
+
+1.RouterModule.forRoot(routes): creates a routing module that includes the router directives, the route configuration and the router service
+2.RouterModule.forChild(routes): creates a routing module that includes the router directives, the route configuration but not the router service.
+
+
+Angular Router has two matching strategies:
+
+1. refix: default, matches when the URL starts with the value of path
+2. full: matches when the URL equals the value of path.
+
+
+**To tell Angular Router where it can place components, we must add the <router-outlet></router-outlet> element to AppComponent’s HTML template.
+The <router-outlet></router-outlet> element tells Angular Router where it can instantiate components in the DOM.
+
+
+CanActivate and CanActivateChild:
+
+A CanActivate guard is useful when we want to check on something before a component gets used.
+
+This is extremely useful for scenarios like:
+
+1.checking if a user is authenticated
+2.checking if a user has permission
+
+
+1. CanDeactivate  Guard navigation away from the current route
+2. CanActivate  Guard navigation to a route
+3. CanActivateChild Guard navigation to a child route
+4. CanLoad   Guard navigation to a feature module loaded asynchronously
+5. Resolve   Perform route data retrieval before route activation
+
+https://github.com/scotch-io/angular2-routing-course/tree/master/app
+
+
+https://stackblitz.com/edit/angular-6-registration-login-example?file=app%2Flogin%2Flogin.component.ts
